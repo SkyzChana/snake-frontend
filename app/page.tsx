@@ -77,7 +77,7 @@ export default function Home() {
     formData.append("file", file);
 
     try {
-      const res = await fetch("https://YOUR_BACKEND_API_URL/upload", {
+      const res = await fetch("http://10.10.11.95:8080/upload", {
         method: "POST",
         body: formData,
       });
