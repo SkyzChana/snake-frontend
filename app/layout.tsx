@@ -36,7 +36,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { NextUIProvider } from "@nextui-org/react";
+import { Providers } from "./providers"; // 👈 import จากไฟล์ที่เพิ่งสร้าง
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -63,8 +63,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-100`}
       >
-        <NextUIProvider>{children}</NextUIProvider>
+        <Providers>{children}</Providers> {/* 👈 ใช้ wrapper client component */}
       </body>
     </html>
   );
 }
+
